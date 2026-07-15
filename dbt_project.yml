@@ -1,0 +1,23 @@
+name: polyglot_demo
+version: 1.0.0
+config-version: 2
+
+profile: polyglot_demo
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+clean-targets: ["target", "dbt_packages", "logs"]
+
+models:
+  polyglot_demo:
+    +transpile_from: postgres
+    +transpile_to: "{{ target.type }}"
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  polyglot_demo:
+    +schema: raw

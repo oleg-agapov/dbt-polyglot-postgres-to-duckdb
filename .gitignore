@@ -74,6 +74,10 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
+logs/
+.user.yml
+data/*.duckdb
+data/*.duckdb.wal
 
 # Jupyter Notebook
 .ipynb_checkpoints

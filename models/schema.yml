@@ -1,0 +1,40 @@
+version: 2
+
+seeds:
+  - name: users
+    columns:
+      - name: user_id
+        data_tests: [not_null, unique]
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [active, inactive]
+
+  - name: orders
+    columns:
+      - name: order_id
+        data_tests: [not_null, unique]
+      - name: user_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('users')
+                field: user_id
+
+models:
+  - name: stg_users
+    columns:
+      - name: user_id
+        data_tests: [not_null, unique]
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        data_tests: [not_null, unique]
+
+  - name: user_order_summary
+    description: One row per user with completed-order metrics.
+    columns:
+      - name: user_id
+        data_tests: [not_null, unique]

@@ -1,0 +1,5 @@
+user_id,email,display_name,created_at,status
+1,ada@example.com,Ada Lovelace,2024-01-05 09:15:00,active
+2,grace@example.com,Grace Hopper,2024-01-17 14:30:00,active
+3,alan@example.com,Alan Turing,2024-02-03 08:00:00,inactive
+4,katherine@example.com,Katherine Johnson,2024-02-20 11:45:00,active
