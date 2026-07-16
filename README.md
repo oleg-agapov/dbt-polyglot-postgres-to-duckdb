@@ -1,5 +1,7 @@
 # dbt-polyglot: PostgreSQL to DuckDB proof of concept
 
+![dbt-polyglot](./dbt-polyglot.png)
+
 This project runs the same PostgreSQL-flavoured dbt models against PostgreSQL
 and DuckDB. On the DuckDB target, `dbt-polyglot` transpiles the compiled model
 SQL from the PostgreSQL dialect to DuckDB during dbt compilation.
